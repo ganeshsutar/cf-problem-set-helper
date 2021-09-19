@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.cf.problem-set-helper</id>
+    <name>Codeforces Problem Set Helper</name>
+    <vendor email="sutarganesh.mail@gmail.com" url="">Ganesh Sutar</vendor>
+
+    <description><![CDATA[
+    A helper plugin to assist in creating java program for the Codeforces but in problem set one by one
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="ProblemParser.DownloadAndParse" text="Parse Problem" description="Parse the problem and create a module">
+            <add-to-group group-id="MainMenu" anchor="last"></add-to-group>
+            <action class="com.cf.problemparser.DownloadAndParse"
+                    description="Download the given problem and create a module with the inputs and outputs"
+                    id="DownloadAndParse" text="Download Problem"></action>
+        </group>
+    </actions>
+</idea-plugin>
